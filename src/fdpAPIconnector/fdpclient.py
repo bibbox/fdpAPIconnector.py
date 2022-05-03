@@ -222,12 +222,12 @@ class FDPClient:
     def createCatalogRDF(self,title,version,publisher,ispartof=None,**kwargs):
         """
         create a RDF turte string for a Catalog resource based on catalog template
-        :param title:
-        :param version:
-        :param publisher:
-        :param ispartof:
+        :param title: title of catalog
+        :param version: version of catalog
+        :param publisher: publisher
+        :param ispartof: id repository (default: url of FDP)
         :param kwargs: any additional Catalog parameters as defined in the template with the prefix '§§' matching is case sensitive
-        :return:
+        :return: new catalog data in RDF turtle format
         """
         catalog = self._catalog_template
         catalog = catalog.replace(f'§§TITLE', str(title))
@@ -251,14 +251,14 @@ class FDPClient:
 
     def createDatasetRDF(self, title, catalogid, version, publisher, themes_list, **kwargs):
         """
-
-        :param title:
-        :param catalogid:
-        :param version:
-        :param publisher:
-        :param themes_list:
-        :param kwargs:
-        :return:
+        create a RDF turte string for a dataset resource based on dataset template
+        :param title: title of dataset
+        :param catalogid: id of catalog the dataset belongs to
+        :param version: version string
+        :param publisher: publisher
+        :param themes_list: list of themes
+        :param kwargs: any additional dataset parameters as defined in the template with the prefix '§§' matching is case sensitive
+        :return: new dataset data in RDF turtle format
         """
         dataset = self._dataset_template
         dataset = dataset.replace(f'§§TITLE', str(title))
@@ -289,14 +289,14 @@ class FDPClient:
 
     def createDistributionRDF(self, title, datasetid, version, publisher, mediatype, **kwargs):
         """
-
-        :param title:
-        :param datasetid:
-        :param version:
-        :param publisher:
-        :param mediatype:
-        :param kwargs:
-        :return:
+        create a RDF turte string for a distribution resource based on dataset template
+        :param title: title of distribution
+        :param datasetid: id of catalog the dataset belongs to
+        :param version: version
+        :param publisher: publisher
+        :param mediatype: mediatype of distribution (e.g. "text/html")
+        :param kwargs: any additional distribution parameters as defined in the template with the prefix '§§' matching is case sensitive
+        :return: new dataset data in RDF turtle format
         """
         dataset = self._distribution_template
         dataset = dataset.replace(f'§§TITLE', str(title))
