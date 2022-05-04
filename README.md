@@ -182,7 +182,7 @@ loc:new
     .
  ```
 
-### Build and push to PyPI
+### Build and upload to PyPI
 
 ```
 # Intsall build and twine
