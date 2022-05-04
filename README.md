@@ -185,13 +185,18 @@ loc:new
 ### Build and push to PyPI
 
 ```
+# Intsall build and twine
+python3 -m pip install --upgrade build
+python3 -m pip install --upgrade twine
+
+#Build the package
 python3 -m build
 
 # to test the package first 
 python3 -m twine upload --repository testpypi dist/*
 python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps fdpAPIconnector
-#
 
+# upload the package
 python3 -m twine upload dist/*
 ```
 
