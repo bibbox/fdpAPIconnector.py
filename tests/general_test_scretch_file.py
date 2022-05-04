@@ -14,7 +14,7 @@ newcat=fdpclient.createCatalogRDF(DESCRIPTION='Hauptkatalog Biobank Graz',
                                title='Hauptkatalog Biobank Graz',
                                version="1.0.0",
                                ispartof=fdpclient.publicurl,
-                               publisher='Projektmanagementteam',
+                               publishername='Projektmanagementteam',
                                LANGUAGE='http://id.loc.gov/vocabulary/iso639-1/de',
                                HOMEPAGE=fdpclient.baseurl)
 
@@ -28,7 +28,7 @@ print(id)
 newdat=fdpclient.createDatasetRDF(title="COVAC-DM Study",
                                version="1.0.0",
                                catalogid=id,
-                               publisher="Projektmanagementteam",
+                               publishername="Projektmanagementteam",
                                ISSUED=datetime.datetime.now(),
                                MODIFIED=datetime.datetime.now(),
                                LANGUAGE='http://id.loc.gov/vocabulary/iso639-1/en',
@@ -46,7 +46,7 @@ print(dat_id)
 newdis=fdpclient.createDistributionRDF(title="Distribution", # HTML distribution
                                version="1.0.0",
                                datasetid=dat_id,
-                               publisher="Projektmanagementteam",
+                               publishername="Projektmanagementteam",
                                ISSUED=datetime.datetime.now(),
                                MODIFIED=datetime.datetime.now(),
                                LANGUAGE='http://id.loc.gov/vocabulary/iso639-1/en',
