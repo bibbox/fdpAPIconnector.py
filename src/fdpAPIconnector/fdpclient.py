@@ -219,12 +219,12 @@ class FDPClient:
         #for row in qres:
         #    print(f"{row.s} dcterms:hasVersion {row.o}")
 
-    def createCatalogRDF(self,title,version,publisher,ispartof=None,**kwargs):
+    def createCatalogRDF(self, title, version, publishername, ispartof=None, **kwargs):
         """
         create a RDF turte string for a Catalog resource based on catalog template
         :param title: title of catalog
         :param version: version of catalog
-        :param publisher: publisher
+        :param publishername: publisher
         :param ispartof: id repository (default: url of FDP)
         :param kwargs: any additional Catalog parameters as defined in the template with the prefix '§§' matching is case sensitive
         :return: new catalog data in RDF turtle format
@@ -236,7 +236,7 @@ class FDPClient:
         else:
             catalog = catalog.replace(f'§§ISPARTOF', str(ispartof))
         catalog = catalog.replace(f'§§VERSION', str(version))
-        catalog = catalog.replace(f'§§PUBLISHER', str(publisher))
+        catalog = catalog.replace(f'§§PUBLISHERNAME', str(publishername))
 
         for key, value in kwargs.items():
             catalog = catalog.replace(f'§§{key}',str(value))
@@ -249,13 +249,13 @@ class FDPClient:
         result_catalog=result_catalog.strip()
         return result_catalog
 
-    def createDatasetRDF(self, title, catalogid, version, publisher, themes_list, **kwargs):
+    def createDatasetRDF(self, title, catalogid, version, publishername, themes_list, **kwargs):
         """
         create a RDF turte string for a dataset resource based on dataset template
         :param title: title of dataset
         :param catalogid: id of catalog the dataset belongs to
         :param version: version string
-        :param publisher: publisher
+        :param publishername: publisher
         :param themes_list: list of themes
         :param kwargs: any additional dataset parameters as defined in the template with the prefix '§§' matching is case sensitive
         :return: new dataset data in RDF turtle format
@@ -264,7 +264,7 @@ class FDPClient:
         dataset = dataset.replace(f'§§TITLE', str(title))
         dataset = dataset.replace(f'§§CATALOGID', str(catalogid))
         dataset = dataset.replace(f'§§VERSION', str(version))
-        dataset = dataset.replace(f'§§PUBLISHER', str(publisher))
+        dataset = dataset.replace(f'§§PUBLISHERNAME', str(publishername))
 
         themes_string = self._join_list_to_string(themes_list, seperator=">, <", prefix="<", suffix=">")
         dataset = dataset.replace('§§THEMES', themes_string)
@@ -287,13 +287,13 @@ class FDPClient:
         result_=result_.strip()
         return result_
 
-    def createDistributionRDF(self, title, datasetid, version, publisher, mediatype, **kwargs):
+    def createDistributionRDF(self, title, datasetid, version, publishername, mediatype, **kwargs):
         """
         create a RDF turte string for a distribution resource based on dataset template
         :param title: title of distribution
         :param datasetid: id of catalog the dataset belongs to
         :param version: version
-        :param publisher: publisher
+        :param publishername: publisher
         :param mediatype: mediatype of distribution (e.g. "text/html")
         :param kwargs: any additional distribution parameters as defined in the template with the prefix '§§' matching is case sensitive
         :return: new dataset data in RDF turtle format
@@ -302,7 +302,7 @@ class FDPClient:
         dataset = dataset.replace(f'§§TITLE', str(title))
         dataset = dataset.replace(f'§§DATASETID', str(datasetid))
         dataset = dataset.replace(f'§§VERSION', str(version))
-        dataset = dataset.replace(f'§§PUBLISHER', str(publisher))
+        dataset = dataset.replace(f'§§PUBLISHERNAME', str(publishername))
         dataset = dataset.replace(f'§§MEDIATYPE', str(mediatype))
 
 
