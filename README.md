@@ -182,6 +182,19 @@ loc:new
     .
  ```
 
+### Build and push to PyPI
+
+```
+python3 -m build
+
+# to test the package first 
+python3 -m twine upload --repository testpypi dist/*
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps fdpAPIconnector
+#
+
+python3 -m twine upload dist/*
+```
+
 ## TODOs
  - [x] allow "login" via api-token instead of email and password
  - [ ] auto check for strings and urls(or iri) for RDF turtle creation
