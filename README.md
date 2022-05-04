@@ -189,7 +189,7 @@ loc:new
 python3 -m pip install --upgrade build
 python3 -m pip install --upgrade twine
 
-#Build the package
+# Build the package
 python3 -m build
 
 # to test the package first 
