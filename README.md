@@ -198,6 +198,9 @@ python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps fdpAP
 
 # upload the package
 python3 -m twine upload dist/*
+# username: __token__
+# password: For the password, use the token value, including the pypi- prefix
+
 ```
 
 ## TODOs
