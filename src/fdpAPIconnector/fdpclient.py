@@ -88,15 +88,15 @@ class FDPClient:
         try:
             data = self._convertRDFGraphtoString(data, format)
             r = requests.post(f'{self.baseurl}/{type}', data=data, headers=create_headers)
-            return self._removePrefix(r.headers['Location'],f'{self.publicurl}/{type}/')
-        except Exception as error:
-            print(f'Unexpected error when connecting to {self.baseurl}/{type}\n')
-            raise error
-        else:
             if r.status_code >= 300:
                 print(f'HTTP error: {r.status_code} {r.reason} for {self.baseurl}/{type}',
                       f'\nResponse message: {r.text}')
                 raise
+            return self._removePrefix(r.headers['Location'],f'{self.publicurl}/{type}/')
+        except Exception as error:
+            print(f'Unexpected error when connecting to {self.baseurl}/{type}\n')
+            raise error
+
 
     def read(self, type='', id='' , subtype='',format='turtle', **kwargs):
         """
@@ -122,14 +122,13 @@ class FDPClient:
 
         try:
             r = requests.get(url, headers=read_headers, **kwargs)
-        except Exception as error:
-            print(f'Unexpected error when connecting to {url}\n')
-            raise error
-        else:
             if r.status_code != 200:
                 print(f'HTTP error: {r.status_code} {r.reason} for {url}',
                       f'\nResponse message: {r.text}')
                 raise
+        except Exception as error:
+            print(f'Unexpected error when connecting to {url}\n')
+            raise error
 
         g = rdflib.Graph()
         g.parse(data=r.text, format=format)
@@ -148,14 +147,13 @@ class FDPClient:
 
         try:
             r = requests.delete(f'{self.baseurl}/{type}/{id}', headers = del_headers ,**kwargs)
-        except Exception as error:
-            print(f'Unexpected error when connecting to {self.baseurl}/{type}/{id}\n')
-            raise error
-        else:
             if r.status_code >= 300:
                 print(f'HTTP error: {r.status_code} {r.reason} for {self.baseurl}/{type}/{id}',
                       f'\nResponse message: {r.text}')
                 raise
+        except Exception as error:
+            print(f'Unexpected error when connecting to {self.baseurl}/{type}/{id}\n')
+            raise error
 
     def update(self,type='', id='' , subtype='', data="", format='turtle', **kwargs):
         """

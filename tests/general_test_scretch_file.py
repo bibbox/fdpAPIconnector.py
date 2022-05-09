@@ -1,6 +1,6 @@
 import datetime
 import fdpAPIconnector as fdpconn
-from fdpAPIconnector.fdpclient import FDPClient
+from src.fdpAPIconnector.fdpclient import FDPClient
 from pprint import pprint
 import datetime
 import json
