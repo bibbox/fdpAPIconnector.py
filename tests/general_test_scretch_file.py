@@ -32,10 +32,10 @@ newdat=fdpclient.createDatasetRDF(title="COVAC-DM Study",
                                ISSUED=datetime.datetime.now(),
                                MODIFIED=datetime.datetime.now(),
                                LANGUAGE='http://id.loc.gov/vocabulary/iso639-1/en',
-                               KEYWORDS=["diabetes mellitus type 1","diabetes mellitus type 2","COVID-19"],
+                               KEYWORDS=["diabetes mellitus type 1 "," diabetes mellitus type 2","COVID-19"],
                                DESCRIPTION="<https://biobank.medunigraz.at/.../biobank/pdf/Kohorten/5006_21_COVAC-DM_Study.pdf>",
                                CONTACTPOINT = "patrick.nitsche@medunigraz.at",
-                               themes_list=["http://www.w3.org/ns/dcat#theme","http://identifiers.org/icd/Q87.8"])
+                               themes_list=["http://www.w3.org/ns/dcat#theme"," http://identifiers.org/icd/Q87.8"])
 pprint(newdat)
 dat_id=fdpclient.create(type='dataset',data=newdat)
 print(dat_id)
