@@ -338,7 +338,7 @@ class FDPClient:
         :return:
         """
         if isinstance(elements, list):
-            ret_string = seperator.join(elements)
+            ret_string = seperator.join([x.strip(' ') for x in elements])
             ret_string = f'{prefix}{ret_string}{suffix}'
             return ret_string
 
