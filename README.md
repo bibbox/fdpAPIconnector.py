@@ -1,6 +1,13 @@
 # fdpAPIconnector.py
 Python package for communictaion with a FairDataPoint (FDP) API. 
 This is based on the [fairdatapoint-client](https://github.com/fair-data/fairdatapoint-client) api client but adapted for [FAIRDataTeam/FAIRDataPoint](https://github.com/FAIRDataTeam/FAIRDataPoint).
+You can find the fdpAPIconnector package on [PyPI](https://pypi.org/project/fdpAPIconnector/).
+
+## Install
+
+```
+pip install fdpAPIconnector
+```
 
 ## Usage
 
