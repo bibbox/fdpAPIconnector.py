@@ -1,5 +1,7 @@
+[![Build Status](https://github.com/bibbox/fdpAPIconnector.py/actions/workflows/python-package.yml/badge.svg)](https://github.com/bibbox/fdpAPIconnector.py/actions/)
 [![PyPI download month](https://img.shields.io/pypi/dm/fdpAPIconnector.svg)](https://pypi.python.org/pypi/fdpAPIconnector/)
 [![PyPI version fury.io](https://badge.fury.io/py/fdpAPIconnector.svg)](https://pypi.python.org/pypi/fdpAPIconnector/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/fdpAPIconnector.svg)](https://pypi.python.org/pypi/fdpAPIconnector/)
 
 
 # fdpAPIconnector.py
