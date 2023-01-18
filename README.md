@@ -1,3 +1,7 @@
+[![PyPI download month](https://img.shields.io/pypi/dm/fdpAPIconnector.svg)](https://pypi.python.org/pypi/fdpAPIconnector/)
+[![PyPI version fury.io](https://badge.fury.io/py/fdpAPIconnector.svg)](https://pypi.python.org/pypi/fdpAPIconnector/)
+
+
 # fdpAPIconnector.py
 Python package for communictaion with a FairDataPoint (FDP) API. 
 This is based on the [fairdatapoint-client](https://github.com/fair-data/fairdatapoint-client) api client but adapted for [FAIRDataTeam/FAIRDataPoint](https://github.com/FAIRDataTeam/FAIRDataPoint).
